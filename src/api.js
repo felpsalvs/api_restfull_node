@@ -1,5 +1,5 @@
-var Db  = require('./controllers/dboperations');
-const dboperations = require('./controllers/dboperations');
+var Db  = require('./services/dboperations');
+const dboperations = require('./services/dboperations');
 
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -26,7 +26,6 @@ router.route('/pessoas').get((request,response)=>{
     dboperations.getPessoas().then(result => {
        response.json(result);
     })
-
 })
 
 //GET PARAMS
