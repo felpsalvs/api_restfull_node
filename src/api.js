@@ -29,10 +29,10 @@ router.route('/pessoas').get((request,response)=>{
 })
 
 //GET PARAMS
-router.route('/orders/:name').get((request,response)=>{
+router.route('/empresa').get((request,response)=>{
 
-   dboperations.getOrder(request.params.name).then(result => {
-      response.json(result[0]);
+   dboperations.getEmpresa().then(result => {
+      response.json(result);
    })
 
 })

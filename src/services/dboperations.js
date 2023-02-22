@@ -20,6 +20,23 @@ async function getPessoas() {
   }
 }
 
+async function getEmpresa() {
+  try {
+    const rows = await new Promise((resolve, reject) => {
+      db.all("SELECT * FROM EMPRESA", (err, rows) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(rows);
+        }
+      });
+    });
+    return rows;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 //GET COM PARÂMETROS
 async function getOrder(data) {
   try {
@@ -130,6 +147,7 @@ async function deleteOrder(data) {
 module.exports = {
   getPessoas: getPessoas,
   getOrder: getOrder,
+  getEmpresa: getEmpresa,
   Insert: Insert,
   Create: Create,
   deleteOrder: deleteOrder,
