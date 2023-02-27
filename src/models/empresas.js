@@ -1,8 +1,8 @@
-class Empresa {
+class Empresas {
   constructor(
       nome){
       this.NOME = nome; 
   }
 }
 
-module.exports = Empresa;
+module.exports = Empresas;
